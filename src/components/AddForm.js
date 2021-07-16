@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { connect } from "react-redux";
+import { setError } from "../actions/index.js";
 
 const AddForm = (props) => {
     const [state, setState] = useState({
@@ -51,7 +53,13 @@ const AddForm = (props) => {
     </section>);
 }
 
-export default AddForm;
+const mapStateToProps = state => {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps, { setError })(AddForm);
 
 //Task List:
 //1. Connect the errorMessage, setError and addSmurf actions to the AddForm component.
